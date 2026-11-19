@@ -2,9 +2,11 @@
 
 桌面格是一个 Windows 桌面整理工具。启动后，它会把桌面文件、文件夹和快捷方式显示在独立的分组面板中。归类和固定操作只保存文件路径，源文件保留在原位置。
 
+**[下载 DeskGrid.exe](https://github.com/Zhaottth/DeskGrid/releases/latest/download/DeskGrid.exe)** · [查看发布记录](https://github.com/Zhaottth/DeskGrid/releases) · [反馈问题](https://github.com/Zhaottth/DeskGrid/issues)
+
 ## 开始使用
 
-下载 [DeskGrid.exe](https://github.com/Zhaottth/DeskGrid/releases/latest/download/DeskGrid.exe)，然后双击运行。程序支持 Windows 10 1607 及以上和 Windows 11，需要 .NET Framework 4.8 或更高版本。
+下载后双击 `DeskGrid.exe` 运行。程序支持 Windows 10 1607 及以上和 Windows 11，需要 .NET Framework 4.8 或更高版本。
 
 1. 默认分组包括「应用与快捷方式」「桌面文件夹」「文档与媒体」和「其他桌面项目」。
 2. 拖动标题栏移动面板，拖动右下角调整大小。双击标题栏可折叠或展开。
@@ -30,8 +32,6 @@
 托盘菜单也可执行这些操作。原生桌面图标可见时，使用快捷键或托盘菜单切换面板显示。管理界面支持规则优先级、按名称通配符或扩展名匹配、按修改时间归类、锁定面板、设置颜色和排序、布局快照以及登录时启动。新文件会自动进入匹配的分组。
 
 分组扫描个人桌面和公共桌面的常规文件项目。回收站位于默认分组「其他桌面项目」的第一格，双击即可打开。托盘菜单的「Windows 系统文件夹」也提供回收站和此电脑入口。布局保存在 `%LOCALAPPDATA%\DeskGrid\layout.xml`。
-
-参见 [Fences 6 功能对照与社区反馈](Fences6-对照.md)。
 
 ## 从源码构建
 
