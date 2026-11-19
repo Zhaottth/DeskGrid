@@ -15,6 +15,7 @@ using Microsoft.Win32;
 [assembly: AssemblyTitle("桌面格 · DeskGrid")]
 [assembly: AssemblyDescription("Windows 桌面分组与文件夹面板")]
 [assembly: AssemblyProduct("DeskGrid")]
+[assembly: AssemblyCopyright("Copyright (c) 2026 Zhaottth")]
 [assembly: AssemblyFileVersion("1.3.0.0")]
 
 namespace DeskGrid

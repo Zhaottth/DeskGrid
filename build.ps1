@@ -13,6 +13,7 @@ $sources = @(Get-ChildItem -LiteralPath $sourceFolder -Filter '*.cs' -File | For
 $output = Join-Path $outputFolder 'DeskGrid.exe'
 $icon = Join-Path $PSScriptRoot 'assets\DeskGrid.ico'
 $manifest = Join-Path $sourceFolder 'DeskGrid.manifest'
-& $compiler /nologo /target:winexe /langversion:5 /optimize+ /codepage:65001 "/out:$output" "/win32icon:$icon" "/win32manifest:$manifest" /r:System.dll /r:System.Core.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll /r:System.Xml.dll @sources
+$license = Join-Path $PSScriptRoot 'LICENSE'
+& $compiler /nologo /target:winexe /langversion:5 /optimize+ /codepage:65001 "/out:$output" "/win32icon:$icon" "/win32manifest:$manifest" "/resource:$license,DeskGrid.LICENSE" /r:System.dll /r:System.Core.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll /r:System.Xml.dll @sources
 if ($LASTEXITCODE -ne 0) { throw "Compilation failed ($LASTEXITCODE)." }
 Write-Output $output

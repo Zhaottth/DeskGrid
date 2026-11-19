@@ -4,7 +4,7 @@
 
 ## 开始使用
 
-双击 [DeskGrid.exe](dist/DeskGrid.exe)。程序支持 Windows 10 1607 及以上和 Windows 11，需要 .NET Framework 4.8 或更高版本。
+下载 [DeskGrid.exe](https://github.com/Zhaottth/DeskGrid/releases/latest/download/DeskGrid.exe)，然后双击运行。程序支持 Windows 10 1607 及以上和 Windows 11，需要 .NET Framework 4.8 或更高版本。
 
 1. 默认分组包括「应用与快捷方式」「桌面文件夹」「文档与媒体」和「其他桌面项目」。
 2. 拖动标题栏移动面板，拖动右下角调整大小。双击标题栏可折叠或展开。
