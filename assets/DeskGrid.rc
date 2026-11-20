@@ -1,0 +1,3 @@
+1 ICON "DeskGrid.ico"
+1 24 "../src/DeskGrid.manifest"
+2 RCDATA "../LICENSE"

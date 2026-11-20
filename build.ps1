@@ -1,19 +1,18 @@
 $ErrorActionPreference = 'Stop'
-$framework = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319'
-if (!(Test-Path -LiteralPath (Join-Path $framework 'csc.exe'))) {
-    $framework = Join-Path $env:WINDIR 'Microsoft.NET\Framework\v4.0.30319'
-}
-$compiler = Join-Path $framework 'csc.exe'
-if (!(Test-Path -LiteralPath $compiler)) { throw 'The Windows .NET Framework C# compiler is required.' }
+Push-Location -LiteralPath $PSScriptRoot
+try {
+    cargo build --release --locked
+    if ($LASTEXITCODE -ne 0) { throw "Cargo build failed ($LASTEXITCODE)." }
 
-$sourceFolder = Join-Path $PSScriptRoot 'src'
-$outputFolder = Join-Path $PSScriptRoot 'dist'
-New-Item -ItemType Directory -Path $outputFolder -Force | Out-Null
-$sources = @(Get-ChildItem -LiteralPath $sourceFolder -Filter '*.cs' -File | ForEach-Object FullName)
-$output = Join-Path $outputFolder 'DeskGrid.exe'
-$icon = Join-Path $PSScriptRoot 'assets\DeskGrid.ico'
-$manifest = Join-Path $sourceFolder 'DeskGrid.manifest'
-$license = Join-Path $PSScriptRoot 'LICENSE'
-& $compiler /nologo /target:winexe /langversion:5 /optimize+ /codepage:65001 "/out:$output" "/win32icon:$icon" "/win32manifest:$manifest" "/resource:$license,DeskGrid.LICENSE" /r:System.dll /r:System.Core.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll /r:System.Xml.dll @sources
-if ($LASTEXITCODE -ne 0) { throw "Compilation failed ($LASTEXITCODE)." }
-Write-Output $output
+    $metadata = cargo metadata --locked --no-deps --format-version 1
+    if ($LASTEXITCODE -ne 0) { throw "Cargo metadata failed ($LASTEXITCODE)." }
+    $targetFolder = ($metadata | ConvertFrom-Json).target_directory
+    $binary = Join-Path $targetFolder 'release\deskgrid.exe'
+    $output = Join-Path $PSScriptRoot 'dist\DeskGrid.exe'
+    New-Item -ItemType Directory -Path (Split-Path -Parent $output) -Force | Out-Null
+    Copy-Item -LiteralPath $binary -Destination $output -Force
+    Write-Output $output
+}
+finally {
+    Pop-Location
+}
