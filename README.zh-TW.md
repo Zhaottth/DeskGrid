@@ -2,9 +2,9 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md)
 
-桌面格是一款 Windows 桌面整理工具，可將桌面上的檔案、資料夾和捷徑顯示在獨立的群組面板中。分類及釘選只會儲存檔案路徑，原始檔案會留在原位。
+桌面格（DeskGrid）是 **Stardock Fences 的開放原始碼替代方案**，適用於 Windows 10 和 Windows 11。它可將桌面圖示、資料夾和捷徑整理到獨立的群組面板中。分類及釘選只會儲存檔案路徑，原始檔案會留在原位。
 
-**[建置 Rust 版 v2.0.0](#從原始碼建置)** · [下載舊版 v1.3.0](https://github.com/Zhaottth/DeskGrid/releases/tag/v1.3.0) · [回報問題](https://github.com/Zhaottth/DeskGrid/issues)
+**[下載 Windows x64 版 v2.0.0](https://github.com/Zhaottth/DeskGrid/releases/download/v2.0.0/DeskGrid-2.0.0-windows-x64.zip)** · [建置原始碼](#從原始碼建置) · [回報問題](https://github.com/Zhaottth/DeskGrid/issues)
 
 ## v2.0.0 的變更
 
@@ -14,7 +14,7 @@
 
 ## 開始使用
 
-按兩下建置產生的 `DeskGrid.exe` 即可執行。支援 Windows 10 1607 以上版本及 Windows 11。升級前請先從系統匣結束舊版。
+解壓縮下載的 ZIP，再按兩下 `DeskGrid.exe` 即可執行。支援 Windows 10 1607 以上版本及 Windows 11。升級前請先從系統匣結束舊版。
 
 按 **Ctrl + Alt + Page Up** 或 **Ctrl + Alt + Page Down**，可在現有桌面頁面之間循環切換。若要更改介面語言，按兩下系統匣圖示開啟管理視窗，進入「設定 → 介面語言」並儲存。
 
@@ -57,3 +57,7 @@
 ## 授權與署名
 
 桌面格 © 2026 Zhaottth，採用 [MIT 授權條款](LICENSE)。散布本專案的副本或實質部分時，須保留著作權聲明和授權聲明。
+
+感謝 Microsoft windows-rs、quick-xml、Serde、tempfile、uuid 和 embed-resource 等開放原始碼專案。Windows 建置所用相依套件及其授權條款見 [第三方軟體聲明](THIRD_PARTY_NOTICES.txt)。發行 ZIP 隨附建置所用 Rust 標準函式庫的著作權聲明。
+
+DeskGrid 是獨立專案。Fences 是 Stardock 的產品。

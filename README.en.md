@@ -2,9 +2,9 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md)
 
-DeskGrid organizes the files, folders, and shortcuts on your Windows desktop into separate group panels. Grouping or pinning an item saves its path and leaves the original file in place.
+DeskGrid is an **open-source Stardock Fences alternative** for Windows 10 and Windows 11. It organizes desktop icons, folders, and shortcuts into separate group panels. Grouping or pinning an item saves its path and leaves the original file in place.
 
-**[Build Rust v2.0.0](#build-from-source)** · [Download legacy v1.3.0](https://github.com/Zhaottth/DeskGrid/releases/tag/v1.3.0) · [Report an issue](https://github.com/Zhaottth/DeskGrid/issues)
+**[Download v2.0.0 for Windows x64](https://github.com/Zhaottth/DeskGrid/releases/download/v2.0.0/DeskGrid-2.0.0-windows-x64.zip)** · [Build from source](#build-from-source) · [Report an issue](https://github.com/Zhaottth/DeskGrid/issues)
 
 ## What's new in v2.0.0
 
@@ -14,7 +14,7 @@ DeskGrid organizes the files, folders, and shortcuts on your Windows desktop int
 
 ## Getting started
 
-Build the executable, then double-click `DeskGrid.exe` to run it. DeskGrid supports Windows 10 version 1607 or later and Windows 11. If upgrading, first exit the previous version from the system tray.
+Extract the release ZIP and double-click `DeskGrid.exe` to run it. DeskGrid supports Windows 10 version 1607 or later and Windows 11. If upgrading, first exit the previous version from the system tray.
 
 Press **Ctrl + Alt + Page Up** or **Ctrl + Alt + Page Down** to cycle through existing desktop pages. To change the interface language, double-click the tray icon, open **Settings → Language**, and save.
 
@@ -57,3 +57,7 @@ Run `cargo test --locked` to check legacy layout compatibility, backups, and gro
 ## License and credit
 
 DeskGrid © 2026 Zhaottth. It is available under the [MIT License](LICENSE). Keep the copyright and permission notices in all copies or substantial portions of the project.
+
+Thanks to the maintainers of Microsoft windows-rs, quick-xml, Serde, tempfile, uuid, embed-resource, and their dependencies. See [Third-party software notices](THIRD_PARTY_NOTICES.txt) for the Windows build's dependencies and license texts. The release ZIP also includes the notices for the Rust standard library used to build it.
+
+DeskGrid is an independent project. Fences is a Stardock product.

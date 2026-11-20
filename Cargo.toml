@@ -1,6 +1,7 @@
 [package]
 name = "deskgrid"
 version = "2.0.0"
+authors = ["Zhaottth"]
 edition = "2024"
 rust-version = "1.89"
 license = "MIT"

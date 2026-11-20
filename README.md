@@ -2,9 +2,9 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md)
 
-桌面格是一个 Windows 桌面整理工具。启动后，它会把桌面文件、文件夹和快捷方式显示在独立的分组面板中。归类和固定操作只保存文件路径，源文件保留在原位置。
+桌面格（DeskGrid）是 **Stardock Fences 的开源平替**，适用于 Windows 10 和 Windows 11。它把桌面图标、文件夹和快捷方式整理到独立的分组面板中。归类和固定操作只保存文件路径，源文件保留在原位置。
 
-**[构建 Rust 版 v2.0.0](#从源码构建)** · [下载旧版 v1.3.0](https://github.com/Zhaottth/DeskGrid/releases/tag/v1.3.0) · [反馈问题](https://github.com/Zhaottth/DeskGrid/issues)
+**[下载 Windows x64 版 v2.0.0](https://github.com/Zhaottth/DeskGrid/releases/download/v2.0.0/DeskGrid-2.0.0-windows-x64.zip)** · [构建源码](#从源码构建) · [反馈问题](https://github.com/Zhaottth/DeskGrid/issues)
 
 ## v2.0.0 的变化
 
@@ -14,7 +14,7 @@
 
 ## 开始使用
 
-双击构建生成的 `DeskGrid.exe` 运行。支持 Windows 10 1607 及以上和 Windows 11。升级时先从托盘退出旧版。
+解压下载的 ZIP，双击 `DeskGrid.exe` 运行。支持 Windows 10 1607 及以上和 Windows 11。升级时先从托盘退出旧版。
 
 按 **Ctrl + Alt + Page Up** 或 **Ctrl + Alt + Page Down**，可在已有的桌面页面之间循环切换。要改界面语言，双击托盘图标打开管理窗口，进入「设置 → 界面语言」并保存。
 
@@ -54,6 +54,12 @@
 
 运行 `cargo test --locked` 检查旧版布局兼容、备份和分组排序。
 
+运行 `.\build.ps1 -Package` 可生成带许可文件的 Windows x64 发布 ZIP。打包需要活动工具链的 Rust 文档组件，缺少时可运行 `rustup component add rust-docs`。
+
 ## 许可与署名
 
 桌面格 © 2026 Zhaottth，采用 [MIT 许可证](LICENSE)。分发本项目的副本或实质性部分时，请保留版权声明和许可声明。
+
+感谢 Microsoft windows-rs、quick-xml、Serde、tempfile、uuid 和 embed-resource 等开源项目。Windows 构建所用依赖及其许可文本见 [第三方软件声明](THIRD_PARTY_NOTICES.txt)。发布 ZIP 附带构建所用 Rust 标准库的版权声明。
+
+DeskGrid 是独立项目。Fences 是 Stardock 的产品。
